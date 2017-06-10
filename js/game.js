@@ -3,7 +3,7 @@ $(document).ready(function()
     $("button").click(function()
     {
         $(this).hide();
-        start = setInterval(GameIsOn, 600);
+        start = setInterval(GameIsOn, 800);
     });
 
 });
@@ -18,16 +18,16 @@ var robbit3=document.getElementById('robbit3');
 var robbit4=document.getElementById('robbit4');
 var content=document.getElementById('content');
 var point=document.getElementById('pointvalue');
-pointvalue=point.value;
+var pointvalue=point.value;
 pointvalue = 0;
 var bullet=document.getElementById('bulletvalue');
-bulletvalue=bullet.value;
+var bulletvalue=bullet.value;
 bulletvalue = 20;
 
 function GameIsOn()
 {
-    time=300;
-    random=Math.random();
+    var time=200;
+    var random=Math.random();
     if(random<=0.25)
     {
         robbit1.style.pointerEvents = "auto";
@@ -40,7 +40,7 @@ function GameIsOn()
           top: '+=100px',
           left: '-=20px',
         }, "fast");
-        setTimeout(function(){robbit1.style.pointerEvents = "none";}, 900);
+        setTimeout(function(){robbit1.style.pointerEvents = "none";}, 800);
     }
       else if(random>0.25 && random<=0.50)
       {
@@ -54,7 +54,7 @@ function GameIsOn()
             top: '+=100px',
             left: '+=20px'
           }, "fast");
-          setTimeout(function(){robbit2.style.pointerEvents = "none";}, 900);
+          setTimeout(function(){robbit2.style.pointerEvents = "none";}, 800);
       }
         else if(random>0.50 && random<=0.75)
         {
@@ -68,7 +68,7 @@ function GameIsOn()
               top: '+=100px',
               left: '-=40px'
             }, "fast");
-            setTimeout(function(){robbit3.style.pointerEvents = "none";}, 900);
+            setTimeout(function(){robbit3.style.pointerEvents = "none";}, 800);
         }
           else if(random>0.75)
           {
@@ -82,7 +82,7 @@ function GameIsOn()
                 top: '+=110px',
                 left: '+=40px'
               }, "fast");
-              setTimeout(function(){robbit4.style.pointerEvents = "none";}, 900);
+              setTimeout(function(){robbit4.style.pointerEvents = "none";}, 800);
             }
 }
 
@@ -106,7 +106,10 @@ $("button").click(function pointsystem()
   content.onmouseup=bulletdown;
   function bulletdown()
   {
-    bulletvalue--;
+    if (bulletvalue!==0)
+    {
+      bulletvalue--;
+    }
     document.getElementById("bulletvalue").innerHTML = bulletvalue;
     if(bulletvalue<=0)
     {
