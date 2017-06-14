@@ -25,12 +25,12 @@ function GameIsOn()
         robbit1.style.pointerEvents = "auto";
         $("#robbit1").animate
         ({
-          top: '-=100px',
-          left: '+=20px'
+          top: "-=100px",
+          left: "+=20px"
         }, "fast").delay(time).animate
         ({
-          top: '+=100px',
-          left: '-=20px',
+          top: "+=100px",
+          left: "-=20px",
         }, "fast");
         setTimeout(function(){robbit1.style.pointerEvents = "none";}, 800);
     }
