@@ -44,7 +44,7 @@ function GameIsOn()
           }, "fast").delay(time).animate
           ({
             top: "+=100px",
-            left: "'+=20px"
+            left: "+=20px"
           }, "fast");
           setTimeout(function(){robbit2.style.pointerEvents = "none";}, 800);
       }
@@ -134,4 +134,11 @@ $(document).ready(function()
         start = setInterval(GameIsOn, 800);
     });
 
+});
+
+
+// loading
+$(window).ready(function()
+{
+  $("#loading").delay(1000).fadeOut("slow");;
 });
